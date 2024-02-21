@@ -1,0 +1,10 @@
+int idade = 25; //Variável para armazenar numeros inteiros
+boolean Temgraduação = true; //Variável para verdadeiro ou falso
+double altura = 1.90; //Variável de ponto flutuante para armazenar numeros decimais
+float dinheiro = 3.71f; //Variável de ponto flutuante simples
+char genero = 'M'; //Variável de caractere para um unico caractere
+long numerolongo = 20000000L; //Variável longa para numeros longos
+short numerocurto = 3000; //Variável curta para numeros inteiros curtos
+byte bytepequeno = 35; //Variável de byte para numeros inteiros pequenos
+String texto = "Hello, World!"; //Variável de texto String
+double resultado = numeroInteiro * numeroDecimal; // Variável para resultado de multiplicação 
