@@ -1,0 +1,25 @@
+ Maneira errada camelCase
+ 
+ 1nomeProduto
+ preçoProduto%
+ marca do produto
+ quantidade produto
+ _descricaoProduto
+ NomeProduto
+ 123_numeroProduto
+ precoDoProduto
+ estoque Disponivel
+ totaldeProdutos
+ 
+ Maneira correta camelCase
+ 
+ nomeProduto
+ precoProduto
+ marcaDoProduto
+ quantidadeProduto
+ descricaoProduto
+ nomeProduto
+ numeroProduto
+ precoDoProduto
+ estoqueDisponivel
+ totalDeProdutos
