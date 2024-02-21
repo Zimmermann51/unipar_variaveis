@@ -1,0 +1,13 @@
+- Nome do Aluno: [String nomeDoAluno = "Matheus";]
+- Idade do Aluno: [int idade = 25;]
+- Nota da Prova 1: [float primeiraNota = 5.8f;]
+- Nota da Prova 2: [float segundaNota = 10f;]
+- Média Final: [double media = 0f;]
+- [media= primeiraNota + segundaNota/2 = 7,9; ]
+
+String nomeDoAluno = "Matheus";
+int idade = 25;
+float primeiraNota = 5.8f;
+float segundaNota = 10f;
+double mediaFinal = 0f;
+mediaFinal = primeiraNota + segundaNota/2 = 7,9;
