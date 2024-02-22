@@ -1,0 +1,8 @@
+public class ControleEstoque {
+    public static void main(String[] args) {
+        String nomeDoProduto = "Leite";
+        String categoriaDoProduto = "Alimentícios";
+        float precoLeite = 1.99f;
+        int quantidadeEstoqueLeite = 40;
+    }
+}
