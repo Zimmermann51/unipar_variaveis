@@ -1,0 +1,15 @@
+public class ControleEstoque {
+    public static void main(String[] args) {
+     
+        String nomeProduto = "QKZ Ak6";
+        double precoProduto = 29.99;
+        int quantidadeProduto = 10;
+        String marcaProduto = "KZ";
+        
+        System.out.println("Dados do Produto: ");
+        System.out.println("Nome: " + nomeProduto);
+        System.out.println("Marca: " + marcaProduto);
+        System.out.println("Preco: $" + precoProduto);
+        System.out.println("Quantidade em estoque: " + quantidadeProduto);
+    }
+}
