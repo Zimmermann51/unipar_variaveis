@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Dividirduasnotas {
+    public static void main(String[] args) {
+        
+        double primeiraNota = 0;
+        double segundaNota = 0;
+        
+        Scanner scanner = new Scanner(System.in);
+                                      
+        System.out.println("Informe a primeira nota: ");
+        primeiraNota = scanner.nextDouble();
+        
+        System.out.println("Informe a segunda nota: ");
+        segundaNota = scanner.nextDouble();
+        
+        double somaNotas = primeiraNota + segundaNota;
+        double mediaNotas = somaNotas/2;
+        
+        System.out.println("Sua media eh: " + mediaNotas);
+        
+    }
+}
