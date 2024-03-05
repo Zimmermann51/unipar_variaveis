@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+class Somadoisnumeros {
+    public static void main(String[] args) {
+        
+        int primeiroValor = 0;
+        int segundoValor = 0;
+        
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Informe o primeiro valor: ");
+        primeiroValor = scanner.nextInt();
+        
+        System.out.println("Informe o segundo valor: ");
+        segundoValor = scanner.nextInt();
+        
+        int total = primeiroValor + segundoValor;
+        
+        System.out.println("O total eh: " + total);
+                
+    }
+}
