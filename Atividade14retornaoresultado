@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+class retornarocalculodosnumeros {
+    public static void main(String[] args) {
+        
+        double primeiroNumero = 0;
+        double segundoNumero = 0;
+ 
+        
+        Scanner scanner = new Scanner(System.in);
+                                      
+        System.out.println("Informe o primeiro numero: ");
+        primeiroNumero = scanner.nextDouble();
+        
+        System.out.println("Informe o segundo numero: ");
+        segundoNumero = scanner.nextDouble();
+        
+        double somaNumeros = primeiroNumero + segundoNumero;
+        double subtraiNumeros = primeiroNumero - segundoNumero;
+        double multiplicaNumeros = primeiroNumero * segundoNumero;
+        double divideNumeros = primeiroNumero / segundoNumero;
+        
+        
+        System.out.println("A soma dos numeros eh: " + somaNumeros);
+        System.out.println("A subtracao dos numeros eh: " + subtraiNumeros);
+        System.out.println("A multiplicacao dos numeros eh: " + multiplicaNumeros);
+        System.out.println("A divisao dos numeros eh: " + divideNumeros);
+        
+    }
+}
