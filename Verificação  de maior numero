@@ -1,0 +1,13 @@
+
+class Main {
+    public static void main(String[] args) {
+        int primeiroValor = 10;
+        int segundoValor = 20;
+        
+        if(primeiroValor > segundoValor){
+            System.out.println("O primeiro eh maior");
+        }else{
+            System.out.println("O segundo eh maior");
+        }
+    }
+}
