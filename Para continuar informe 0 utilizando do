@@ -1,0 +1,16 @@
+package br.unipar.main;
+import java.util.Scanner;
+
+public class Exemple {
+    public static void main(String[] args) {
+
+        int opcao = 0;
+        Scanner scanner = new Scanner(System.in);
+
+        do {
+            System.out.println("Para continuar informe 0: ");
+            opcao = scanner.nextInt();
+
+        } while (opcao == 0);
+    }
+}
