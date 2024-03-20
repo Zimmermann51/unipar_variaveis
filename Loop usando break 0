@@ -1,0 +1,21 @@
+
+package br.unipar.main;
+import java.util.Scanner;
+
+public class ExempleWhile {
+    public static void main(String[] args) {
+
+        Scanner scanner =  new Scanner(System.in);
+        int opcao = 1;
+
+        while (true){
+
+            System.out.println("Informe um valor: ");
+            opcao = scanner.nextInt();
+
+            if(opcao == 0) {
+                break;
+            }
+        }
+    }
+}
