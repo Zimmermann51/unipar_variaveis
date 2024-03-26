@@ -1,0 +1,50 @@
+package br.unipar.main;
+
+import br.unipar.objetos.Pessoa;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+
+        String versao = "";
+        Pessoa pessoa1 = new Pessoa();
+        pessoa1.nome = "Matheus";
+        pessoa1.idade = 22;
+        pessoa1.sexo = "M";
+        pessoa1.cpf = "102.360.689-54";
+
+        Pessoa pessoa2 = new Pessoa();
+        pessoa2.nome = "Joao";
+        pessoa2.idade = 35;
+        pessoa2.sexo = "M";
+        pessoa2.cpf = "1";
+
+        System.out.println(pessoa1.nome);
+        System.out.println(pessoa2.nome);
+
+
+
+    }
+}
+
+
+
+
+
+
+package br.unipar.objetos;
+
+public class Pessoa {
+    public String nome;
+    public String sexo;
+    public Integer idade;
+    public String cpf;
+
+    void  andar () {
+
+    }
+
+}
