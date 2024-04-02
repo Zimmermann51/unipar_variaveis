@@ -1,0 +1,24 @@
+Class produto
+package br.unipar.objetos;
+
+public class Produto {
+    public Integer codigo;
+    public String nome;
+    public  Produto(){
+
+         codigo = 1;
+         nome = "Produto 1";
+    }
+}
+Class main
+package br.unipar.main;
+
+import br.unipar.objetos.Produto;
+
+public class Main {
+    public static void main(String[] args) {
+        Produto produto = new Produto();
+        System.out.println(produto.codigo);
+        System.out.println(produto.nome);
+    }
+}
