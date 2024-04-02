@@ -1,0 +1,66 @@
+Classe produto
+package Produto;
+
+public class Produto {
+    private int codigo;
+    private String descricao;
+    private double preco;
+    private int quantidadeEmEstoque;
+
+    public Produto(int codigo, String descricao, double preco, int quantidadeEmEstoque) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getQuantidadeEmEstoque() {
+        return quantidadeEmEstoque;
+    }
+
+    public void adicionarEstoque(int quantidade) {
+        quantidadeEmEstoque += quantidade;
+        System.out.println("Estoque adicionado: " + quantidade + " unidades.");
+    }
+
+    public void removerEstoque(int quantidade) {
+        if (quantidade <= quantidadeEmEstoque) {
+            quantidadeEmEstoque -= quantidade;
+            System.out.println("Estoque removido: " + quantidade + " unidades.");
+        } else {
+            System.out.println("Estoque insuficiente para remover " + quantidade + " unidades.");
+        }
+    }
+}
+
+Classe TesteProduto
+package Produto;
+
+public class TesteProduto {
+    public static void main(String[] args) {
+        Produto produto = new Produto(123, "Camiseta", 29.90, 50);
+
+        System.out.println("Informações do Produto:");
+        System.out.println("Código: " + produto.getCodigo());
+        System.out.println("Descrição: " + produto.getDescricao());
+        System.out.println("Preço: R$" + produto.getPreco());
+        System.out.println("Quantidade em estoque: " + produto.getQuantidadeEmEstoque());
+
+        produto.adicionarEstoque(20);
+
+        produto.removerEstoque(30);
+        produto.removerEstoque(50);
+    }
+}
