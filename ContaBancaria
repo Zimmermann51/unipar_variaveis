@@ -7,7 +7,7 @@ public class ContaBancaria {
 
     public ContaBancaria(String numeroConta) {
         this.numeroConta = numeroConta;
-        this.saldo = 0.0; // Saldo inicializado como zero
+        this.saldo = 0.0; // 
     }
 
     public void depositar(double valor) {
