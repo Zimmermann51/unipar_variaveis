@@ -1,0 +1,78 @@
+Classe MainEncapsulado
+
+package main;
+
+import objeto.PessoaEncapsulada;
+
+public class MainEncapsulado {
+    public static void main(String[] args) {
+        PessoaEncapsulada pessoa = new PessoaEncapsulada();
+
+        pessoa.setNome();
+        pessoa.getNome();
+        pessoa.setTime();
+        pessoa.getTime();
+
+    }
+}
+
+
+Classe MainSemEncapsulamento
+
+package main;
+
+import objeto.PessoaSemEncapsulamento;
+
+public class MainSemEncapsulamento {
+
+    public static void main(String[] args) {
+
+        PessoaSemEncapsulamento pessoa = new PessoaSemEncapsulamento();
+         pessoa.nome = "Sr." + "Matheus";
+         pessoa.time = "Magnus";
+
+    }
+}
+
+Classe PessoaEncapsulada
+
+package objeto;
+
+public class PessoaEncapsulada{
+    //Primeiro passo  - Atributos Privados
+
+    private String nome;
+    private String time;
+
+    //Getter vai ser para retornar o valor de algo
+    // Sempre vai ser public ou protect
+
+    public String getNome (){
+        return nome;
+    }
+
+    public String getTime (){
+        return time;
+    }
+    public void setNome (String nome){
+
+        this.nome = nome;
+    }
+
+    public void setTime (String time){
+        this.time = time;
+    }
+
+}
+
+Classe PessoaSemEncapsulamento
+
+package objeto;
+
+public class PessoaSemEncapsulamento {
+
+    public String nome;
+    public String time;
+
+}
+
