@@ -1,0 +1,91 @@
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Main {
+    public static final int TAMANHO_MAX_PILHA = 5; 
+
+    public static void main(String[] args) {
+        Stack<Integer> pilha = new Stack<>();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            exibirMenu();
+            int escolha = lerOpcao(scanner);
+
+            switch (escolha) {
+                case 1:
+                    empilharNumero(scanner, pilha);
+                    break;
+                case 2:
+                    desempilharNumero(pilha);
+                    break;
+                case 3:
+                    mostrarTopo(pilha);
+                    break;
+                case 4:
+                    listarNumeros(pilha);
+                    break;
+                case 0:
+                    System.out.println("Saindo do programa.");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }
+    }
+
+    public static void exibirMenu() {
+        System.out.println("=== MENU ===");
+        System.out.println("1. Empilhar Número");
+        System.out.println("2. Desempilhar Número");
+        System.out.println("3. Mostrar Topo");
+        System.out.println("4. Listar Números");
+        System.out.println("0. Sair");
+        System.out.print("Escolha uma opção: ");
+    }
+
+    public static int lerOpcao(Scanner scanner) {
+        return scanner.nextInt();
+    }
+
+    public static void empilharNumero(Scanner scanner, Stack<Integer> pilha) {
+        if (pilha.size() < TAMANHO_MAX_PILHA) {
+            System.out.print("Digite o número para empilhar: ");
+            int numero = scanner.nextInt();
+            pilha.push(numero);
+            System.out.println("Número empilhado: " + numero);
+        } else {
+            System.out.println("A pilha está cheia. Não é possível empilhar mais números.");
+        }
+    }
+
+    public static void desempilharNumero(Stack<Integer> pilha) {
+        if (!pilha.isEmpty()) {
+            int numeroDesempilhado = pilha.pop();
+            System.out.println("Número desempilhado: " + numeroDesempilhado);
+        } else {
+            System.out.println("A pilha está vazia.");
+        }
+    }
+
+    public static void mostrarTopo(Stack<Integer> pilha) {
+        if (!pilha.isEmpty()) {
+            System.out.println("Topo da pilha: " + pilha.peek());
+        } else {
+            System.out.println("A pilha está vazia.");
+        }
+    }
+
+    public static void listarNumeros(Stack<Integer> pilha) {
+        if (!pilha.isEmpty()) {
+            System.out.println("Números na pilha:");
+            for (int numero : pilha) {
+                System.out.println(numero);
+            }
+        } else {
+            System.out.println("A pilha está vazia.");
+        }
+    }
+}
