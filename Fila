@@ -1,0 +1,79 @@
+import java.util.Scanner;
+import java.util.Queue;
+import java.util.LinkedList;
+
+public class Main {
+    public static final int TAMANHO_MAX_FILA = 5; 
+    public static void main(String[] args) {
+        Queue<Integer> fila = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            exibirMenu();
+            int escolha = lerOpcao(scanner);
+
+            switch (escolha) {
+                case 1:
+                    adicionarNumero(scanner, fila);
+                    break;
+                case 2:
+                    removerNumero(fila);
+                    break;
+                case 3:
+                    listarNumeros(fila);
+                    break;
+                case 0:
+                    System.out.println("Saindo do programa.");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+                    break;
+            }
+        }
+    }
+
+    public static void exibirMenu() {
+        System.out.println("=== MENU ===");
+        System.out.println("1. Adicionar Número");
+        System.out.println("2. Remover Número");
+        System.out.println("3. Listar Números");
+        System.out.println("0. Sair");
+        System.out.print("Escolha uma opção: ");
+    }
+
+    public static int lerOpcao(Scanner scanner) {
+        return scanner.nextInt();
+    }
+
+    public static void adicionarNumero(Scanner scanner, Queue<Integer> fila) {
+        if (fila.size() < TAMANHO_MAX_FILA) {
+            System.out.print("Digite o número para adicionar na fila: ");
+            int numero = scanner.nextInt();
+            fila.offer(numero);
+            System.out.println("Número adicionado na fila: " + numero);
+        } else {
+            System.out.println("A fila está cheia. Não é possível adicionar mais números.");
+        }
+    }
+
+    public static void removerNumero(Queue<Integer> fila) {
+        if (!fila.isEmpty()) {
+            int numeroRemovido = fila.poll();
+            System.out.println("Número removido da fila: " + numeroRemovido);
+        } else {
+            System.out.println("A fila está vazia.");
+        }
+    }
+
+    public static void listarNumeros(Queue<Integer> fila) {
+        if (!fila.isEmpty()) {
+            System.out.println("Números na fila:");
+            for (int numero : fila) {
+                System.out.println(numero);
+            }
+        } else {
+            System.out.println("A fila está vazia.");
+        }
+    }
+}
