@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+public class Produto {
+    private String nome;
+    private double preco;
+    private int quantidadeEmEstoque;
+
+    public Produto(String nome) {
+        this.nome = nome;
+        this.preco = 0.0;
+        this.quantidadeEmEstoque = 0;
+    }
+
+
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEmEstoque = 0;
+    }
+
+   
+    public Produto(String nome, double preco, int quantidadeEmEstoque) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+
+   
+    public String getNome() {
+        return nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getQuantidadeEmEstoque() {
+        return quantidadeEmEstoque;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Criar Produto usando diferentes construtores:");
+        System.out.println("1. Nome do Produto");
+        System.out.println("2. Nome e Preço do Produto");
+        System.out.println("3. Nome, Preço e Quantidade em Estoque do Produto");
+        System.out.print("Escolha uma opção (1/2/3): ");
+        int opcao = scanner.nextInt();
+        scanner.nextLine(); 
+
+        switch (opcao) {
+            case 1:
+                System.out.print("Digite o nome do produto: ");
+                String nome1 = scanner.nextLine();
+                Produto produto1 = new Produto(nome1);
+                System.out.println("Produto criado com sucesso:");
+                System.out.println("Nome: " + produto1.getNome());
+                System.out.println("Preço: " + produto1.getPreco());
+                System.out.println("Quantidade em Estoque: " + produto1.getQuantidadeEmEstoque());
+                break;
+            case 2:
+                System.out.print("Digite o nome do produto: ");
+                String nome2 = scanner.nextLine();
+                System.out.print("Digite o preço do produto: ");
+                double preco2 = scanner.nextDouble();
+                Produto produto2 = new Produto(nome2, preco2);
+                System.out.println("Produto criado com sucesso:");
+                System.out.println("Nome: " + produto2.getNome());
+                System.out.println("Preço: " + produto2.getPreco());
+                System.out.println("Quantidade em Estoque: " + produto2.getQuantidadeEmEstoque());
+                break;
+            case 3:
+                System.out.print("Digite o nome do produto: ");
+                String nome3 = scanner.nextLine();
+                System.out.print("Digite o preço do produto: ");
+                double preco3 = scanner.nextDouble();
+                System.out.print("Digite a quantidade em estoque do produto: ");
+                int quantidade3 = scanner.nextInt();
+                Produto produto3 = new Produto(nome3, preco3, quantidade3);
+                System.out.println("Produto criado com sucesso:");
+                System.out.println("Nome: " + produto3.getNome());
+                System.out.println("Preço: " + produto3.getPreco());
+                System.out.println("Quantidade em Estoque: " + produto3.getQuantidadeEmEstoque());
+                break;
+            default:
+                System.out.println("Opção inválida!");
+        }
+
+        scanner.close();
+    }
+}
