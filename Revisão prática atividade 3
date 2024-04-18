@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+class Produto {
+    private String nome;
+    private double preco;
+    private int quantidade;
+
+    public Produto(String nome, double preco, int quantidade) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Produto[] estoque = new Produto[100]; 
+        int numProdutos = 0;
+
+        while (true) {
+            System.out.println("\nMenu:");
+            System.out.println("1. Adicionar novo produto");
+            System.out.println("2. Atualizar preço ou quantidade de um produto existente");
+            System.out.println("3. Exibir detalhes de um produto");
+            System.out.println("4. Sair");
+            System.out.print("Escolha uma opção: ");
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Nome do produto: ");
+                    String nome = scanner.next();
+                    System.out.print("Preço do produto: ");
+                    double preco = scanner.nextDouble();
+                    System.out.print("Quantidade em estoque: ");
+                    int quantidade = scanner.nextInt();
+                    estoque[numProdutos] = new Produto(nome, preco, quantidade);
+                    numProdutos++;
+                    System.out.println("Produto adicionado ao estoque com sucesso!");
+                    break;
+                case 2:
+                    System.out.print("Digite o nome do produto que deseja atualizar: ");
+                    String nomeProduto = scanner.next();
+                    boolean produtoEncontrado = false;
+                    for (int i = 0; i < numProdutos; i++) {
+                        if (estoque[i].getNome().equalsIgnoreCase(nomeProduto)) {
+                            produtoEncontrado = true;
+                            System.out.println("Produto encontrado. Digite 'p' para atualizar o preço, 'q' para atualizar a quantidade:");
+                            String opcaoAtualizacao = scanner.next();
+                            if (opcaoAtualizacao.equalsIgnoreCase("p")) {
+                                System.out.print("Novo preço: ");
+                                double novoPreco = scanner.nextDouble();
+                                estoque[i].setPreco(novoPreco);
+                                System.out.println("Preço atualizado com sucesso!");
+                            } else if (opcaoAtualizacao.equalsIgnoreCase("q")) {
+                                System.out.print("Nova quantidade: ");
+                                int novaQuantidade = scanner.nextInt();
+                                estoque[i].setQuantidade(novaQuantidade);
+                                System.out.println("Quantidade atualizada com sucesso!");
+                            } else {
+                                System.out.println("Opção inválida!");
+                            }
+                            break;
+                        }
+                    }
+                    if (!produtoEncontrado) {
+                        System.out.println("Produto não encontrado!");
+                    }
+                    break;
+                case 3:
+                    System.out.print("Digite o nome do produto: ");
+                    String nomeBusca = scanner.next();
+                    boolean encontrado = false;
+                    for (int i = 0; i < numProdutos; i++) {
+                        if (estoque[i].getNome().equalsIgnoreCase(nomeBusca)) {
+                            encontrado = true;
+                            System.out.println("Detalhes do produto:");
+                            System.out.println("Nome: " + estoque[i].getNome());
+                            System.out.println("Preço: " + estoque[i].getPreco());
+                            System.out.println("Quantidade em estoque: " + estoque[i].getQuantidade());
+                            break;
+                        }
+                    }
+                    if (!encontrado) {
+                        System.out.println("Produto não encontrado!");
+                    }
+                    break;
+                case 4:
+                    System.out.println("Encerrando o programa...");
+                    System.exit(0);
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        }
+    }
+}
