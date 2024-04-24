@@ -1,0 +1,408 @@
+CIDADE
+package br.unipar.entity;
+
+
+public class Cidade {
+
+    private Integer codigo;
+    private String nome;
+    private String uf;
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getUf() {
+        return uf;
+    }
+
+    public void setUf(String uf) {
+        this.uf = uf;
+    }
+}
+
+EMPRESA
+package br.unipar.entity;
+
+public class Empresa {
+
+    private Integer codigo;
+    private String nome;
+    private String cnpj;
+    private String inscricaoEstadual;
+    private String razaoSocial;
+    private String endereco;
+    private String situacao;
+    private Cidade cidade;
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getInscricaoEstadual() {
+        return inscricaoEstadual;
+    }
+
+    public void setInscricaoEstadual(String inscricaoEstadual) {
+        this.inscricaoEstadual = inscricaoEstadual;
+    }
+
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
+
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
+    }
+}
+
+FUNCIONARIO 
+
+package br.unipar.entity;
+
+import java.time.LocalDateTime;
+
+public class Funcionario extends Pessoa {
+
+
+    private LocalDateTime dataContrato;
+    private Double salario;
+    private String rg;
+    private String local;
+    private Integer capacidade;
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
+
+    public Integer getCapacidade() {
+        return capacidade;
+    }
+
+    public void setCapacidade(Integer capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public LocalDateTime getDataContrato() {
+        return dataContrato;
+    }
+
+    public void setDataContrato(LocalDateTime dataContrato) {
+        this.dataContrato = dataContrato;
+    }
+
+    public Double getSalario() {
+        return salario;
+    }
+
+    public void setSalario(Double salario) {
+        this.salario = salario;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+}
+
+FORNECEDOR
+
+package br.unipar.entity;
+
+public class Fornecedor extends Pessoa{
+
+    private String cnpj;
+    private String email;
+    private String formaPagamento;
+    private String nome;
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFormaPagamento() {
+        return formaPagamento;
+    }
+
+    public void setFormaPagamento(String formaPagamento) {
+        this.formaPagamento = formaPagamento;
+    }
+
+    @Override
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+CLIENTE
+
+package br.unipar.entity;
+
+public class Cliente extends Pessoa {
+
+
+    private String rg;
+    private String cnpj;
+    private String email;
+    private String conceito;
+    private String pagamento;
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getConceito() {
+        return conceito;
+    }
+
+    public void setConceito(String conceito) {
+        this.conceito = conceito;
+    }
+
+    public String getPagamento() {
+        return pagamento;
+    }
+
+    public void setPagamento(String pagamento) {
+        this.pagamento = pagamento;
+    }
+}
+
+DEPARTAMENTO PROGRAMADOR
+
+package br.unipar.entity;
+
+public class DepartamentoProgramador extends Funcionario{
+
+private String classificacao;
+
+    public String getClassificacao() {
+        return classificacao;
+    }
+
+    public void setClassificacao(String classificacao) {
+        this.classificacao = classificacao;
+    }
+}
+
+DEPARTAMENTO GERENTE
+
+package br.unipar.entity;
+
+public class DepartamentoGerente extends Funcionario{
+
+    private Double bonificacao;
+
+    public Double getBonificacao() {
+        return bonificacao;
+    }
+
+    public void setBonificacao(Double bonificacao) {
+        this.bonificacao = bonificacao;
+    }
+}
+
+PESSOA 
+
+package br.unipar.entity;
+
+public class Pessoa {
+
+    private Integer codigo;
+    private String nome;
+    private String endereco;
+    private String telefone;
+    private Cidade cidade;
+
+    public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
+        this.cidade = cidade;
+    }
+}
+
+GERENTE DEPARTAMENTO
+
+package br.unipar.entity;
+
+public class GerenteDepartamento extends Funcionario{
+    
+    private String departamento;
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+}
+
+DEPARTAMENTO ESTRATEGICO 
+
+package br.unipar.entity;
+
+public class DepartamentoEstrategico extends Funcionario{
+    
+    private String estrategia;
+
+    public String getEstrategia() {
+        return estrategia;
+    }
+
+    public void setEstrategia(String estrategia) {
+        this.estrategia = estrategia;
+    }
+}
+
+DEPARTAMENTO PROJETO 
+
+package br.unipar.entity;
+
+public class DepartamentoProjeto extends Funcionario{
+    
+    private String projeto;
+
+    public String getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(String projeto) {
+        this.projeto = projeto;
+    }
+}
+
