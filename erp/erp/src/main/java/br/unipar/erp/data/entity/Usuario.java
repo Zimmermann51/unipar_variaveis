@@ -1,9 +1,15 @@
 package br.unipar.erp.data.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 
-public class Usuario {
+@Entity
 
+public class Usuario {
+    
+    @Id
     private Integer codigo;
 
     private String usuario;
@@ -12,5 +18,5 @@ public class Usuario {
 
     private LocalDate dataNascimento;
 
-    
+
 }
